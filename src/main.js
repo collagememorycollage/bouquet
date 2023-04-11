@@ -3,21 +3,24 @@ import "./vendor";
 import { ImageSlider } from "./utils/image-slider";
 import { iosVhFix } from "./utils/ios-vh-fix";
 import { modals, initModals } from "./modals/init-modals";
-
-import BoardPresenter from "./presenter/board-presenter";
+import SectionHeroView from "../src/viev/section-hero-view.js";
+import { render } from "../src/render.js";
+// import BoardPresenter from "./presenter/board-presenter.js";
 // Ваши импорты...
 
-const siteMainElement = document.querySelector(".main");
+// const mainPresenter = new BoardPresenter({
+//   header: siteHeaderElement,
+//   main: siteMainElement,
+//   footer: siteFooterElement,
+//   body: siteBodyElement,
+// });
+
+const siteMainElement = document.querySelector("main");
 const siteBodyElement = document.querySelector("body");
 const siteFooterElement = document.querySelector(".footer");
 const siteHeaderElement = document.querySelector(".header");
-
-const mainPresenter = new BoardPresenter({
-  header: siteHeaderElement,
-  main: siteMainElement,
-  footer: siteFooterElement,
-  body: siteBodyElement,
-});
+render(new SectionHeroView(), siteMainElement);
+// mainPresenter.init();
 // Код для работы попапов, не удаляйте его
 window.addEventListener("DOMContentLoaded", () => {
   iosVhFix();
@@ -45,5 +48,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Ваш код...
 });
-
-mainPresenter.init();

@@ -1,5 +1,5 @@
-{
-  /* <section class="hero">
+// {
+/* <section class="hero">
           <div class="hero__wrapper">
             <div class="hero__background">
               <picture>
@@ -16,8 +16,8 @@
             </div>
           </div>
         </section> */
-}
-
+// }
+import { createElement } from "../framework/render.js";
 // import AbstractView from "../framework/view/abstract-view.js";
 
 function createSectionHeroTemplate() {
@@ -43,7 +43,19 @@ function createSectionHeroTemplate() {
 }
 
 export default class SectionHeroView {
-  get template() {
+  getTemplate() {
     return createSectionHeroTemplate();
+  }
+
+  getElement() {
+    if (!this.element) {
+      this.element = createElement(this.getTemplate());
+    }
+
+    return this.element;
+  }
+
+  removeElement() {
+    this.element = null;
   }
 }
