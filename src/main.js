@@ -4,18 +4,10 @@ import { ImageSlider } from "./utils/image-slider";
 import { iosVhFix } from "./utils/ios-vh-fix";
 import { modals, initModals } from "./modals/init-modals";
 
-// import BoardPresenter from "./presenter/board-presenter.js";
 // Ваши импорты...
 import BoardPresenter from "./presenter/board-presenter.js";
+import BouqueteModel from "./model/bouquete-model";
 
-// const mainPresenter = new BoardPresenter({
-//   header: siteHeaderElement,
-//   main: siteMainElement,
-//   footer: siteFooterElement,
-//   body: siteBodyElement,
-// });
-
-// mainPresenter.init();
 // Код для работы попапов, не удаляйте его
 window.addEventListener("DOMContentLoaded", () => {
   iosVhFix();
@@ -47,11 +39,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const siteFooterElement = document.querySelector("footer");
   const siteHeaderElement = document.querySelector("header");
 
+  const bouqueteModel = new BouqueteModel();
+  console.log(bouqueteModel);
   const mainPresenter = new BoardPresenter({
     main: siteMainElement,
     body: siteBodyElement,
     footer: siteFooterElement,
     header: siteHeaderElement,
+    bouqueteModel,
   });
   mainPresenter.init();
 });
