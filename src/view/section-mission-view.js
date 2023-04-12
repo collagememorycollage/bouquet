@@ -23,19 +23,21 @@ function createMissionTemplate() {
 }
 
 export default class SectionMissionView {
-  getTemplate() {
+  #element = null;
+
+  get template() {
     return createMissionTemplate();
   }
 
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
+  get element() {
+    if (!this.#element) {
+      this.#element = createElement(this.template);
     }
 
-    return this.element;
+    return this.#element;
   }
 
   removeElement() {
-    this.element = null;
+    this.#element = null;
   }
 }

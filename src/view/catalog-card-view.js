@@ -35,7 +35,7 @@ export default class CatalogCardView {
   #element = null;
   #bouquete = null;
 
-  constructor({ bouquete }) {
+  constructor({bouquete}) {
     this.#bouquete = bouquete;
   }
   get template() {
@@ -44,7 +44,7 @@ export default class CatalogCardView {
 
   get element() {
     if (!this.#element) {
-      this.#element = createElement(this.getTemplate());
+      this.#element = createElement(this.template);
     }
 
     return this.#element;

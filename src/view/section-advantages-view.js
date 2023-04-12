@@ -39,18 +39,16 @@ function createSectionAdvantagesTemplate() {
 }
 
 export default class SectionAdvantagesView {
-  #bouquete = null;
+
   #element = null;
-  constructor({bouquete}){
-    this.#bouquete = bouquete
-  }
-  getTemplate() {
-    return createSectionAdvantagesTemplate(this.#bouquete);
+
+  get template() {
+    return createSectionAdvantagesTemplate();
   }
 
-  getElement() {
+  get element() {
     if (!this.#element) {
-      this.#element = createElement(this.getTemplate());
+      this.#element = createElement(this.template);
     }
 
     return this.#element;

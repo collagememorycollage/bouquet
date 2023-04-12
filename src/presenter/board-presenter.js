@@ -8,45 +8,51 @@ import SectionCatalogueView from "../view/section-catalogue-view.js";
 import CatalogCardView from "../view/catalog-card-view.js";
 
 export default class BoardPresenter {
-  sectionHeroComponent = new SectionHeroView();
-  sectionAdvantagesComponent = new SectionAdvantagesView();
-  sectionMissionComponent = new SectionMissionView();
-  sectionFilterReasonComponent = new SectionFilterReasonView();
-  sectionFilterColorComponent = new SectionFilterColorView();
-  sectionCatalogueComponent = new SectionCatalogueView();
-  boardCatalogComponent = null;
+  #sectionHeroComponent = new SectionHeroView();
+  #sectionAdvantagesComponent = new SectionAdvantagesView();
+  #sectionMissionComponent = new SectionMissionView();
+  #sectionFilterReasonComponent = new SectionFilterReasonView();
+  #sectionFilterColorComponent = new SectionFilterColorView();
+  #sectionCatalogueComponent = new SectionCatalogueView();
+  #boardCatalogComponent = null;
+  #boardBouquete = [];
 
+  #header = null;
+  #body = null;
+  #footer = null;
+  #main = null;
+  #bouqueteModel = null;
   constructor({ header, body, footer, main, bouqueteModel }) {
-    this.header = header;
-    this.body = body;
-    this.footer = footer;
-    this.main = main;
-    this.bouqueteModel = bouqueteModel;
+    this.#header = header;
+    this.#body = body;
+    this.#footer = footer;
+    this.#main = main;
+    this.#bouqueteModel = bouqueteModel;
   }
 
   initMain() {
-    render(this.sectionHeroComponent, this.main);
-    render(this.sectionMissionComponent, this.main);
-    render(this.sectionAdvantagesComponent, this.main);
-    render(this.sectionFilterReasonComponent, this.main);
-    render(this.sectionFilterColorComponent, this.main);
-    render(this.sectionCatalogueComponent, this.main);
+    render(this.#sectionHeroComponent, this.#main);
+    render(this.#sectionMissionComponent, this.#main);
+    render(this.#sectionAdvantagesComponent, this.#main);
+    render(this.#sectionFilterReasonComponent, this.#main);
+    render(this.#sectionFilterColorComponent, this.#main);
+    render(this.#sectionCatalogueComponent, this.#main);
 
-    this.boardCatalogComponent =
-      this.sectionCatalogueComponent.element.querySelector(".catalogue__list");
+    this.#boardCatalogComponent =
+      this.#sectionCatalogueComponent.element.querySelector(".catalogue__list");
 
-    for (let i = 1; i < this.boardBouquete.length; i++) {
+    for (let i = 1; i < this.#boardBouquete.length; i++) {
       render(
         new CatalogCardView({
-          bouquete: this.boardBouquete[i],
+          bouquete: this.#boardBouquete[i],
         }),
-        this.boardCatalogComponent
+        this.#boardCatalogComponent
       );
     }
   }
 
   init() {
-    this.boardBouquete = [...this.bouqueteModel.getBouquete()];
+    this.#boardBouquete = [...this.#bouqueteModel.bouquete];
     this.initMain();
   }
 }
