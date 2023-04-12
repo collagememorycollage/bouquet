@@ -18,7 +18,8 @@ function createCatalogCardTemplate(bouquete) {
               </svg>
             </button>
             <picture>
-              <source type="image/webp" srcset="img/content/items/item-delicate-irises.webp, img/content/items/item-delicate-irises@2x.webp 2x"><img src="../img/content/items/item-delicate-irises.png" srcset="img/content/items/item-delicate-irises@2x.png 2x" width="244" height="412" alt="item-delicate-irises">
+              <source type="image/webp" srcset="./img/content/items/item-delicate-irises.webp, ./img/content/item-delicate-irises@2x.webp 2x">
+              <img src="./img/content/items/item-delicate-irises.png" srcset="./img/content/item-delicate-irises@2x.png 2x" width="244" height="412" alt="item-delicate-irises">
             </picture>
           </div>
           <div class="item-card__desc-wrap">
