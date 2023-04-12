@@ -58,8 +58,13 @@ function createSectionFilterColorTemplate() {
 }
 
 export default class SectionFilterColorView {
+  #bouquete = null;
+  #element = null;
+  constructor({bouquete}) {
+    this.#bouquete = bouquete;
+  }
   getTemplate() {
-    return createSectionFilterColorTemplate();
+    return createSectionFilterColorTemplate(this.#bouquete);
   }
 
   getElement() {

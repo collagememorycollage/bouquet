@@ -1,4 +1,4 @@
-import { COLORS, PRISE, NAME, AUTHOR_PHOTO } from "../const";
+import { COLORS, PRISE, NAME, AUTHOR_PHOTO, PREVIEW_IMAGE } from "../const";
 import { getRandomArrayElement } from "../utils";
 
 const mockBouquete = [
@@ -10,8 +10,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage:
-      "http://localhost:9000/static/bouquets/preview/christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
   {
@@ -22,8 +21,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage:
-      "http://localhost:9000/static/bouquets/preview/christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
   {
@@ -34,8 +32,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage:
-      "http://localhost:9000/static/bouquets/preview/christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
   {
@@ -46,8 +43,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage:
-      "http://localhost:9000/static/bouquets/preview/christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
   {
@@ -58,7 +54,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage: "christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
   {
@@ -69,7 +65,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage: "christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
   {
@@ -80,7 +76,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage: "christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
   {
@@ -91,7 +87,7 @@ const mockBouquete = [
     type: "birthday",
     color: getRandomArrayElement(COLORS),
     price: getRandomArrayElement(PRISE),
-    previewImage: "christie-kim.png",
+    previewImage: getRandomArrayElement(PREVIEW_IMAGE),
     authorPhoto: getRandomArrayElement(AUTHOR_PHOTO),
   },
 ];

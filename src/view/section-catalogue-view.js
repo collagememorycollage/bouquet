@@ -36,19 +36,24 @@ function createSectionCatalogueTemplate() {
 }
 
 export default class SectionCatalogueView {
+  #bouquete = null;
+  #element = null;
+  constructor({bouquete}) {
+    this.#bouquete = bouquete;
+  }
   getTemplate() {
-    return createSectionCatalogueTemplate();
+    return createSectionCatalogueTemplate(this.#bouquete);
   }
 
   getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
+    if (!this.#element) {
+      this.#element = createElement(this.getTemplate());
     }
 
-    return this.element;
+    return this.#element;
   }
 
   removeElement() {
-    this.element = null;
+    this.#element = null;
   }
 }

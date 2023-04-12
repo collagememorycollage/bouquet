@@ -35,7 +35,7 @@ export default class BoardPresenter {
     this.boardCatalogComponent =
       this.sectionCatalogueComponent.element.querySelector(".catalogue__list");
 
-    for (let i = 0; i < this.boardBouquete.length; i++) {
+    for (let i = 1; i < this.boardBouquete.length; i++) {
       render(
         new CatalogCardView({
           bouquete: this.boardBouquete[i],

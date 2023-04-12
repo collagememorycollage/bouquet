@@ -1,8 +1,7 @@
 import { createElement } from "../framework/render.js";
 
 function createCatalogCardTemplate(bouquete) {
-  const { id, title, description, previewImage, price, authorPhoto, color } =
-    bouquete;
+  const { id, title, description, previewImage, price, authorPhoto, color } = bouquete;
 
   return `
   <li class="catalogue__item">
@@ -18,8 +17,8 @@ function createCatalogCardTemplate(bouquete) {
               </svg>
             </button>
             <picture>
-              <source type="image/webp" srcset="./img/content/items/item-delicate-irises.webp, ./img/content/item-delicate-irises@2x.webp 2x">
-              <img src="./img/content/items/item-delicate-irises.png" srcset="./img/content/item-delicate-irises@2x.png 2x" width="244" height="412" alt="item-delicate-irises">
+              <source type="image/webp" srcset="./img/content/items/${bouquete.previewImage}.webp, ./img/content/${bouquete.previewImage}@2x.webp 2x">
+              <img src="./img/content/items/${bouquete.previewImage}.png" srcset="./img/content/${bouquete.previewImage}@2x.png 2x" width="244" height="412" alt="item-delicate-irises">
             </picture>
           </div>
           <div class="item-card__desc-wrap">
@@ -33,22 +32,25 @@ function createCatalogCardTemplate(bouquete) {
 }
 
 export default class CatalogCardView {
+  #element = null;
+  #bouquete = null;
+
   constructor({ bouquete }) {
-    this.bouquete = bouquete;
+    this.#bouquete = bouquete;
   }
-  getTemplate() {
-    return createCatalogCardTemplate(this.bouquete);
+  get template() {
+    return createCatalogCardTemplate(this.#bouquete);
   }
 
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
+  get element() {
+    if (!this.#element) {
+      this.#element = createElement(this.getTemplate());
     }
 
-    return this.element;
+    return this.#element;
   }
 
   removeElement() {
-    this.element = null;
+    this.#element = null;
   }
 }

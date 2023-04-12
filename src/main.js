@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const siteHeaderElement = document.querySelector("header");
 
   const bouqueteModel = new BouqueteModel();
-  console.log(bouqueteModel);
+  
   const mainPresenter = new BoardPresenter({
     main: siteMainElement,
     body: siteBodyElement,
